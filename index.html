@@ -11,27 +11,7 @@
 
     <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://futboltv.b-cdn.net/css/home.min.css?201227" />	
-	
-<script>
-  function handleLinkClick(url) {
-    // Comunica el enlace al WebViewer de App Inventor
-    //window.customEvent.trigger('linkClicked', url);
-	window.AppInventor.setWebViewString("holaAntonio")
-  }
-
-  // Agrega un manejador de eventos a todos los enlaces
-  var links = document.getElementsByTagName('a');
-  for (var i = 0; i < links.length; i++) {
-    links[i].addEventListener('click', function(e) {
-      e.preventDefault(); // Evita la navegación por defecto
-      handleLinkClick(this.href);
-    });
-  }
-</script>
-
 </head>
-	
-
 	
 </body>
     <title>Fútbol Antonios - Partidos de fútbol hoy en Antonios</title>
@@ -133,4 +113,21 @@
 	</div>
     
 </body>
+
+<script>
+  function handleLinkClick(url) {
+    // Comunica el enlace al WebViewer de App Inventor
+    //window.customEvent.trigger('linkClicked', url);
+	window.AppInventor.setWebViewString("holaAntonio")
+  }
+
+  // Agrega un manejador de eventos a todos los enlaces
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    links[i].addEventListener('click', function(e) {
+      e.preventDefault(); // Evita la navegación por defecto
+      handleLinkClick(this.href);
+    });
+  }
+</script>
 </html>
