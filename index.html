@@ -12,15 +12,23 @@
     <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://futboltv.b-cdn.net/css/home.min.css?201227" />
 </head>
+	
 <script>
-  // Deshabilitar el zoom en el WebView
-  document.documentElement.style.touchAction = 'manipulation';
-  document.addEventListener('touchstart', function(event) {
-    if (event.touches.length > 1) {
-      event.preventDefault();
-    }
-  }, { passive: false });
+  function handleLinkClick(url) {
+    // Comunica el enlace al WebViewer de App Inventor
+    window.customEvent.trigger('linkClicked', url);
+  }
+
+  // Agrega un manejador de eventos a todos los enlaces
+  var links = document.getElementsByTagName('a');
+  for (var i = 0; i < links.length; i++) {
+    links[i].addEventListener('click', function(e) {
+      e.preventDefault(); // Evita la navegación por defecto
+      handleLinkClick(this.href);
+    });
+  }
 </script>
+	
 </body>
     <title>Fútbol Antonios - Partidos de fútbol hoy en Antonios</title>
     <div class="container">
