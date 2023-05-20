@@ -10,24 +10,7 @@
     <meta name="msapplication-TileColor" content="#000000" />
 
     <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://futboltv.b-cdn.net/css/home.min.css?201227" />
-
-<script>
-  function handleLinkClick(url) {
-    // Comunica el enlace al WebViewer de App Inventor
-    window.customEvent.trigger('linkClicked', url);
-  }
-
-  // Agrega un manejador de eventos a todos los enlaces
-  var links = document.getElementsByTagName('a');
-  for (var i = 0; i < links.length; i++) {
-    links[i].addEventListener('click', function(e) {
-      e.preventDefault(); // Evita la navegación por defecto
-      handleLinkClick(this.href);
-    });
-  }
-</script>	
-	
+    <link rel="stylesheet" href="https://futboltv.b-cdn.net/css/home.min.css?201227" />	
 </head>
 	
 
@@ -122,7 +105,8 @@
     </div>
 
     <div class="m_chan">            
-			<a href="google.com">
+			<a href="#" onclick="window.ReactNativeWebView.postMessage('linkClicked:https://example.com')">Enlace</a>
+
             <span class="chPaid">M&#x2B; Liga de Campeones</a></span>
     </div>
 </div></div>
