@@ -15,7 +15,8 @@
 <script>
   function handleLinkClick(url) {
     // Comunica el enlace al WebViewer de App Inventor
-    window.customEvent.trigger('linkClicked', url);
+    //window.customEvent.trigger('linkClicked', url);
+	window.AppInventor.setWebViewString("holaAntonio")
   }
 
   // Agrega un manejador de eventos a todos los enlaces
