@@ -1965,6 +1965,20 @@
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 	<script defer src="https://futboltv.b-cdn.net/js/home.min.js?201227" type="text/javascript"></script>
     
-    
+<script>
+	function handleLinkClick(url) {
+		// Comunica el enlace al WebViewer de App Inventor
+		window.AppInventor.setWebViewString(url);
+	}
+
+	// Agrega un manejador de eventos a todos los enlaces
+	var links = document.getElementsByTagName('a');
+	for (var i = 0; i < links.length; i++) {
+		links[i].addEventListener('click', function(e) {
+			e.preventDefault(); // Evita la navegación por defecto
+			handleLinkClick(this.href);
+		});
+	}
+</script>    
 </body>
 </html>
