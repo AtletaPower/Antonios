@@ -10,17 +10,6 @@
    </head>
 
 <body style="background:none;">
-<script>
-  // Deshabilitar el zoom en el WebView
-  document.documentElement.style.touchAction = 'manipulation';
-  document.addEventListener('touchstart', function(event) {
-    if (event.touches.length > 1) {
-      event.preventDefault();
-    }
-  }, { passive: false });
-</script>
-    
-
 
     <div class="rowFecha"><span>mi&#xE9;rcoles, 10 de mayo de 2023</span></div>
     <div class="parrilla">
@@ -1927,5 +1916,20 @@
 <div style="text-align:center;padding:10px;">
     <a href="https://www.futboltv.info?utm_source=&amp;utm_medium=widget&amp;utm_campaign=general&amp;utm_content=MasPartidos" target="_blank" class="btnMas">Ver más partidos</a>
 </div>
+    <script>
+	function handleLinkClick(url) {
+		// Comunica el enlace al WebViewer de App Inventor
+		window.AppInventor.setWebViewString(url);
+	}
+
+	// Agrega un manejador de eventos a todos los enlaces
+	var links = document.getElementsByTagName('a');
+	for (var i = 0; i < links.length; i++) {
+		links[i].addEventListener('click', function(e) {
+			e.preventDefault(); // Evita la navegación por defecto
+			handleLinkClick(this.href);
+		});
+	}
+</script>
 </body>
 </html>
