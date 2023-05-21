@@ -66,6 +66,21 @@
 <li><a href="acestream://c1a176e0165da407199bb9f8fb3acc2aaab2d3d1">Supercopa2 1080 Multi</a></li>
 <li><a href="acestream://95d9967309d74d3dbd87c66cf374666bb9da9f07">Supercopa3 1080</a></li>
 <li><a href="acestream://a16f0078ccb46ba65aaa175ad823e47ec31ab464">Supercopa 720</a></li>
-<ul>
-<body>
-<html>
+</ul>
+<script>
+	function handleLinkClick(url) {
+		// Comunica el enlace al WebViewer de App Inventor
+		window.AppInventor.setWebViewString(url);
+	}
+
+	// Agrega un manejador de eventos a todos los enlaces
+	var links = document.getElementsByTagName('a');
+	for (var i = 0; i < links.length; i++) {
+		links[i].addEventListener('click', function(e) {
+			e.preventDefault(); // Evita la navegación por defecto
+			handleLinkClick(this.href);
+		});
+	}
+</script>
+</body>
+</html>
