@@ -134,11 +134,12 @@ h2 {font-family:Oswald,sans-serif;font-weight:400;color:#000;background-color:#e
 function handleLinkClick(url) {
 // Comunica el enlace al WebViewer de App Inventor
 window.AppInventor.setWebViewString(url);
-}// Agrega un manejador de eventos a todos los enlaces
+}
+ // Agrega un manejador de eventos a todos los enlaces
 var links = document.getElementsByTagName('a');
 for (var i = 0; i < links.length; i++) {
 links[i].addEventListener('click', function(e) {
-//e.preventDefault(); // Evita la navegación por defecto
+e.preventDefault(); // Evita la navegación por defecto
 handleLinkClick(this.href);
 });
 }
