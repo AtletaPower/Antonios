@@ -113,30 +113,20 @@
 	</div>
    
 <script>
-  function handleLinkClick(url) {
-    // Comunica el enlace al WebViewer de App Inventor
-    //window.customEvent.trigger('linkClicked', url);
-	window.AppInventor.setWebViewString(url);
-  }
+	function handleLinkClick(url) {
+		// Comunica el enlace al WebViewer de App Inventor
+		window.AppInventor.setWebViewString(url);
+	}
 
-  // Agrega un manejador de eventos a todos los enlaces
-  var links = document.getElementsByTagName('a');
-  for (var i = 0; i < links.length; i++) {
-    links[i].addEventListener('click', function(e) {
-      e.preventDefault(); // Evita la navegación por defecto
-      handleLinkClick(this.href);
-    });
-  }
-
-// Deshabilitar el zoom en el WebView
-  document.documentElement.style.touchAction = 'manipulation';
-  document.addEventListener('touchstart', function(event) {
-    if (event.touches.length > 1) {
-      event.preventDefault();
-    }
-  }, { passive: false });
+	// Agrega un manejador de eventos a todos los enlaces
+	var links = document.getElementsByTagName('a');
+	for (var i = 0; i < links.length; i++) {
+		links[i].addEventListener('click', function(e) {
+			e.preventDefault(); // Evita la navegación por defecto
+			handleLinkClick(this.href);
+		});
+	}
 </script>
 </body>
-
 
 </html>
