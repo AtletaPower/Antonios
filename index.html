@@ -127,6 +127,14 @@
       handleLinkClick(this.href);
     });
   }
+
+// Deshabilitar el zoom en el WebView
+  document.documentElement.style.touchAction = 'manipulation';
+  document.addEventListener('touchstart', function(event) {
+    if (event.touches.length > 1) {
+      event.preventDefault();
+    }
+  }, { passive: false });
 </script>
 </body>
 
