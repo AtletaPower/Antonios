@@ -133,7 +133,7 @@ window.AppInventor.setWebViewString(url);
 var links = document.getElementsByTagName('a');
 for (var i = 0; i < links.length; i++) {
 links[i].addEventListener('click', function(e) {
-e.preventDefault(); // Evita la navegación por defecto
+//e.preventDefault(); // Evita la navegación por defecto
 handleLinkClick(this.href);
 });
 }
