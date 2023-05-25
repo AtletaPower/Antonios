@@ -13,12 +13,36 @@ a:link, a:visited, a:active {text-decoration:none}
 h1 {margin:0;font-family:Oswald,Arial;font-weight:400;font-size:1.4em;padding:7px 15px 9px;color:#FFF;background:0 #595959;position:sticky;top:0px;z-index:1;margin-top:0;}
 h2 {font-family:Oswald,sans-serif;font-weight:400;color:#000;background-color:#ededed;font-size:1.4em;padding:0px 5px;margin-bottom:3px;margin-top:3px;display:flex;align-items:center;}
 body {background-color: #f5f5f5;margin:0;}
+.menu {
+  display: flex;
+}
+.menu-link {
+  flex: 1;
+  font-family:Oswald,Arial;font-weight:500;font-size:1.4em;
+  text-align: center;
+  background-color: #888;
+  padding: 10px;
+  text-decoration: none;
+  color: #EEE;
+  padding:5px;
+}
+.menu-link:first-child {
+  background-color: #888;
+  color: #FFF;
+}
+
 </style>
 </head>
 </body>
 <title>Antonios</title>
+
+<div class="menu">
+  <a href="index.html" class="menu-link">Canales</a>
+  <a href="programacion.html" class="menu-link">Programación</a>
+</div>
+
+
 <h1>Seleccione el canal que desea ver:</h1>
-<a href="Plantilla.html">Ir a la plantilla</a>
 <a href="acestream://1e0214a06000e6f4847dd30cdc2fb839527be862">
 <h2><img src="https://www.movistarplus.es/recorte/m-DPBLAN/guiamovil/MLIGA.png" />M.Liga 1080 Multiaudio</h2></a>
 <a href="acestream://d47addf5e467cbf102ba759600303c21efb1deeb">
@@ -131,9 +155,9 @@ function handleLinkClick(url) {
 window.AppInventor.setWebViewString(url);
 }// Agrega un manejador de eventos a todos los enlaces
 var links = document.getElementsByTagName('a');
-for (var i = 0; i < links.length; i++) {
+for (var i = 2; i < links.length; i++) {
 links[i].addEventListener('click', function(e) {
-//e.preventDefault(); // Evita la navegación por defecto
+e.preventDefault(); // Evita la navegación por defecto
 handleLinkClick(this.href);
 });
 }
