@@ -3,134 +3,210 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <link rel="dns-prefetch" href="https://futboltv.b-cdn.net" />
-    <link rel="dns-prefetch" href="https://sportstves.b-cdn.net" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
-
-    <meta name="theme-color" content="#222222">
-    <meta name="msapplication-navbutton-color" content="#222222">
-    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="/icons/icon-57.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/icons/icon-114.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/icons/icon-72.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/icons/icon-144.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="/icons/icon-120.png" />
-    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/icons/icon-152.png" />
-    <link rel="icon" type="image/png" href="/icons/icon-32.png" sizes="32x32" />
-    <link rel="icon" type="image/png" href="/icons/icon-16.png" sizes="16x16" />
-    <meta name="application-name" content="Fútbol TV" />
-    <meta name="msapplication-TileColor" content="#000000" />
-    <meta name="msapplication-TileImage" content="/icons/icon-144.png" />
-    <link rel="shortcut icon" href="/favicon.ico">
-
     <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
-    <link rel="preload" href="https://futboltv.b-cdn.net/fonts/ftvsocial/css/ftvsocial.css?201227" as="style" />
-    <link rel="stylesheet" href="https://futboltv.b-cdn.net/css/home.min.css?201227" />
-    <link rel="manifest" href="/manifest.json">
+	<!link rel="stylesheet" href="https://futboltv.b-cdn.net/css/home.min.css?201227" />
+
+
+<style>
+a:link, a:visited, a:active {text-decoration:none;color: inherit;}
+body {background-color: #f5f5f5;margin:0;}
+.menu {
+  display: flex;
+}
+.menu-link {
+  flex: 1;
+  font-family:Oswald,Arial;font-weight:500;font-size:1.4em;
+  text-align: center;
+  position: relative;
+  background-color: #888;
+  color: #FFF;
+  padding: 10px;
+  text-decoration: none;  
+}
+.menu-link.active {
+  color: #FFF; /* Establece el color deseado para el enlace activo */
+}
+.menu-link:first-child {
+  background-color: #888;
+  color: #EEE;
+}
+.menu-link.active:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #FFF;
+}
+
+/* Contenedores */
+.pagecontent{background:#f5f5f5;display:flex;flex-wrap:wrap;padding:0px 15px 15px 15px;}
+.main{width:100%}
+
+/* Estilos para los encabezados de fila */
+.row-header {
+  font-family: Oswald, sans-serif;
+  font-weight: 400;
+  color: #FFF;
+  background:#595959;
+  font-size: 1.3em;
+  padding: 5px 10px;
+  margin-bottom: 3px;
+  margin-top: 0px;
+  display: flex;
+  align-items: center;
+}
+
+/* Estilos para las filas */
+.row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 3px;
+  margin-top:3px;
+  background:#DAE8D9;
+}
+
+/* Estilos para el área izquierda */
+.left-area {
+  flex-shrink: 0; /* Evita que el área izquierda se encoja */
+  width: 100px; /* Establece el ancho fijo del área izquierda */
+  margin-right: 0;
+}
+
+/* Estilos para el icono */
+.icon {
+  display: block;
+  text-align: center;
+}
+
+/* Estilos para el texto debajo del icono */
+.text {
+  font-family:Oswald,Arial;
+  text-align:center;
+  font-weight: 300;
+  font-size: 1.3em;
+}
+
+/* Estilos para la hora */
+.hora {
+	font-family:Oswald,Arial;
+	text-align:center;
+	color:#BF0404;
+	font-weight:700;
+	font-size:1.4em;
+}
+
+/* Estilos para el área derecha */
+.right-area {
+  flex-grow: 1;
+  text-align: center;
+}
+
+/* Estilos para el nombre del evento */
+.event-name {
+  font-family: Oswald,Arial;
+  font-weight: 300;
+  font-size: 1.3em;
+  margin-bottom: 5px;
+}
+
+/* Estilos para la información adicional del evento */
+.event-info {
+  font-family: Oswald,Arial;
+  font-weight: bold;
+  font-size: 1.3em;
+  margin-bottom: 5px;
+}
+
+/* Estilos para la información del canal */
+.canal {
+	margin:0 2px 2px;
+	display:inline-block;
+	padding:2px 5px;
+	font-size:.9em;
+	-moz-border-radius:3px;
+	-webkit-border-radius:3px;
+	border-radius:3px;
+	white-space:pre;
+	background-color:#ff8902;
+	color:#fff;
+}
+
+</style>
 </head>
+
 <body>
-    <title>Fútbol Antonios - Partidos de fútbol hoy en Antonios</title>
-    <meta property="og:title" content="Antonios - Partidos de fútbol hoy en la tele" />   
-
-    <div class="container">
-        
-
+    <title>Antonios</title>
+<div class="menu">
+  <a href="index.html" class="menu-link">Canales</a>
+  <a href="calendario.html" class="menu-link active">Programación</a>
+</div>
+   
 <div class="pagecontent">
-    <main class="main">
+<main class="main">
+	
+<div class="row-header">Encabezado de fila</div>
 
-        <h1>Próximos partidos de Fútbol en Antonios</h1>
+<a href="acestream://8b2e003ef51657196d2096aa84b9b21ae4bfb660">
+<div class="row">
+  <div class="left-area">
+	<div class="icon">
+		<img src="https://sportstves.b-cdn.net/teams/mini_628_201908200809.png"/>
+	</div>
+	<div class="text">Deporte</div>	
+	<div class="hora">21:00</div>	
+	</div>
+  <div class="right-area">
+    <div class="event-name">
+      Nombre del evento
+    </div>
+    <div class="event-info">
+      Información adicional del evento
+    </div>
+	    <div class="canal">M&#x2B; Liga de Campeones</div>
+  </div>
+</div></a>
 
-<div class="matchday">
-    <h2 class="matchdayHeader">Partidos de hoy</h2>
+<div class="row">
+  <div class="left-area">
 
-<div class="match primera-femenino">
-    <div class="colTime">
-        <div class="m_time">19:00</div>
+	<div class="text">Deporte</div>	
+	<div class="hora">21:00</div>	
+
+	</div>
+  <div class="right-area">
+    <div class="event-name">
+      Nombre del evento
     </div>
-    <div>
-        <div class="m_comp">Liga F</div>
-        <div class="m_teams">
-            <div class="m_teamA" data-target="sevilla-fc-femenino">
-                    <img src="https://sportstves.b-cdn.net/teams/mini_628_201908200809.png"/>
-                <span  itemprop="homeTeam">Sevilla FC Fem.</span>
-            </div>
-            <div class="m_teamB" data-target="barcelona-fem">
-                    <img src="https://sportstves.b-cdn.net/teams/mini_544_201905151643.png"/>
-                <span  itemprop="awayTeam">Barcelona Femenino</span>
-            </div>
-            <div class="clearfix"></div>
-        </div>
+    <div class="event-info">
+      Información adicional del evento
     </div>
-    <div class="m_chan">		
-			<a href="acestream://8b2e003ef51657196d2096aa84b9b21ae4bfb660">
-				<img src="https://sportstves.b-cdn.net/channels/dazn_201903010537.png"> 
-			</a>
+	    <div class="canal">M&#x2B; Liga de Campeones</div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="left-area">
+
+	<div class="text">Deporte</div>	
+	<div class="hora">21:00</div>	
+
+	</div>
+  <div class="right-area">
+    <div class="event-name">
+      Nombre del evento
     </div>
+    <div class="event-info">
+      Información adicional del evento
+    </div>
+	    <div class="canal">M&#x2B; Liga de Campeones</div>
+  </div>
 </div>
 
 
-<div class="match champions-league">
-    <div class="colTime">
-        <div class="m_time">21:00</div>
-    </div>
-    <div>
-        <div class="m_comp">Champions League</div>
-        <div class="m_teams">
-            <div class="m_teamA" data-target="a-c-milan">
-                    <img src="https://sportstves.b-cdn.net/teams/mini_85_20130125.png"/>
-                <span  itemprop="homeTeam">A.C. Milan</span>
-            </div>
-            <div class="m_teamB" data-target="inter-de-milan">
-                    <img src="https://sportstves.b-cdn.net/teams/mini_46_20130204.png"/>
-                <span  itemprop="awayTeam">Inter de Milan</span>
-            </div>
-            <div class="clearfix"></div>
-        </div>
-    </div>
-
-    <div class="m_chan">
-		<a href="acestream://8b2e003ef51657196d2096aa84b9b21ae4bfb660">
-            <span class="chPaid">M&#x2B; Liga de Campeones</a></span>
-		
-		<a href="acestream://8b2e003ef51657196d2096aa84b9b21ae4bfb661">
-            <span class="chPaid">Otro</a></span>
-		
-    </div>
-</div></div>
-
-
-<div class="matchday">
-    <h2 class="matchdayHeader">Ma&#xF1;ana jueves, 11 de mayo de 2023</h2>
-
-
-<div class="match europa-league">
-    <div class="colTime">
-        <div class="m_time">21:00</div>
-    </div>
-    <div>
-        <div class="m_comp">Europa League</div>
-        <div class="m_teams">
-            <div class="m_teamA" data-target="juventus">
-                    <img src="https://sportstves.b-cdn.net/teams/mini_124_20130207.png"/>
-                <span  itemprop="homeTeam">Juventus</span>
-            </div>
-            <div class="m_teamB" data-target="sevilla">
-                    <img src="https://sportstves.b-cdn.net/teams/mini_12_20130125.png"/>
-                <span  itemprop="awayTeam">Sevilla</span>
-            </div>
-            <div class="clearfix"></div>
-        </div>
-    </div>
-
-    <div class="m_chan">            
-			<a href="acestream://8b2e003ef51657196d2096aa84b9b21ae4bfb660">
-            <span class="chPaid">M&#x2B; Liga de Campeones</a></span>
-    </div>
-</div></div>
-
-    </main>
-
+</main>
+</div>
     
 </body>
 </html>

@@ -10,48 +10,79 @@
 <link href="https://fonts.googleapis.com/css2?family=Oswald&display=swap" rel="stylesheet">
 <style>
 a:link, a:visited, a:active {text-decoration:none}
-main.main{flex-basis:0;flex-grow:1;width:100%;padding:0 15px}
-div.pagecontent{background:#f5f5f5;display:flex;flex-wrap:wrap;padding-bottom:20px}
-.container{padding-right:15px;padding-left:15px;margin-right:auto;margin-left:auto}
-h1 {font-family:Oswald,sans-serif; width:100%;font-size:1.5em}
-h2 {font-family:Oswald,sans-serif;font-weight:400;color:#000;background-color:#ededed;font-size:1.6em;padding:10px 10px 10px 10px;margin:10px;margin-right:auto;margin-left:auto;display:flex;align-items:center}
+h1 {margin:0;font-family:Oswald,Arial;font-weight:400;font-size:1.4em;padding:7px 15px 9px;color:#FFF;background:0 #595959;position:sticky;top:0px;z-index:1;margin-top:0;}
+h2 {font-family:Oswald,sans-serif;font-weight:400;color:#000;background-color:#ededed;font-size:1.4em;padding:0px 5px;margin-bottom:3px;margin-top:3px;display:flex;align-items:center;}
+body {background-color: #f5f5f5;margin:0;}
+.menu {
+  display: flex;
+}
+
+.menu-link {
+  flex: 1;
+  font-family:Oswald,Arial;font-weight:500;font-size:1.4em;
+  text-align: center;
+  position: relative;
+  background-color: #888;
+  color: #EEE;
+  padding: 10px;
+  text-decoration: none;  
+}
+.menu-link:first-child {
+  background-color: #888;
+  color: #FFF;
+}
+.menu-link.active:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: #FFF;
+}
+
 </style>
 </head>
 </body>
 <title>Antonios</title>
-<div class="container">
-<div class="pagecontent">
-<main class="main">
+
+<div class="menu">
+  <a href="index.html" class="menu-link active">Canales</a>
+  <a href="calendario.html" class="menu-link">Programación</a>
+</div>
+
+
+<h1>Seleccione el canal que desea ver:</h1>
 <a href="acestream://1e0214a06000e6f4847dd30cdc2fb839527be862">
-<h2><img src="https://sportstves.b-cdn.net/channels/movistar-laliga_201907160859.png" />M.Liga 1080 Multiaudio</h2></a>
+<h2><img src="https://www.movistarplus.es/recorte/m-DPBLAN/guiamovil/MLIGA.png" />M.Liga 1080 Multiaudio</h2></a>
 <a href="acestream://d47addf5e467cbf102ba759600303c21efb1deeb">
-<h2><img src="https://sportstves.b-cdn.net/channels/movistar-laliga_201907160859.png" />M.Liga 1080 Multiaudio</h2></a>
+<h2><img src="https://www.movistarplus.es/recorte/m-DPBLAN/guiamovil/MLIGA.png" />M.Liga 1080 Multiaudio</h2></a>
 <a href="acestream://5c668adaf86ed6af2488e28d9f3a4e3b0e909664">
-<h2><img src="https://sportstves.b-cdn.net/channels/movistar-laliga_201907160859.png" />M.Liga 720</h2></a>
+<h2><img src="https://www.movistarplus.es/recorte/m-DPBLAN/guiamovil/MLIGA.png" />M.Liga 720</h2></a>
 <a href="acestream://37d42d2b5d2278e6bb5810329a5f220867b3cf0c">
-<h2><img src="https://sportstves.b-cdn.net/channels/movistar-laliga-2_201907171308.png" />M.Liga 2 1080 MultiAudio</h2></a>
+<h2><img src="https://www.movistarplus.es/recorte/m-DPBLAN/guiamovil/MLIG1.png" />M.Liga 2 1080 MultiAudio</h2></a>
 <a href="acestream://91cf24543ac5a3dcd4a3557ce52de3f50ee6cb18">
-<h2><img src="https://sportstves.b-cdn.net/channels/movistar-laliga-2_201907171308.png" />M.Liga 2 720</h2></a>
+<h2><img src="https://www.movistarplus.es/recorte/m-DPBLAN/guiamovil/MLIG1.png" />M.Liga 2 720</h2></a>
 <a href="acestream://7264961f63dc9dc6ef7acee7371f7a76b6a02061">
-<h2><img src="https://sportstves.b-cdn.net/channels/dazn-laliga_202207010744.png" />Dazn liga 1080 MultiAudio</h2></a>
+<h2><img src="https://www.movistarplus.es/recorte/m-DPBLAN/guiamovil/DAZNLI.png" />Dazn liga 1080 MultiAudio</h2></a>
 <a href="acestream://0b01aa547ffe11ce2042bfe443abafb3ea17e5ff">
-<h2><img src="https://sportstves.b-cdn.net/channels/dazn-laliga_202207010744.png" />Dazn liga 1080 MultiAudio</h2></a>
+<h2><img src="https://www.movistarplus.es/recorte/m-DPBLAN/guiamovil/DAZNLI.png" />Dazn liga 1080 MultiAudio</h2></a>
 <a href="acestream://05b9cb49947d3b78bbc66671c6e16ba0ae3b60b6">
-<h2><img src="https://sportstves.b-cdn.net/channels/dazn-laliga_202207010744.png" />Dazn liga 720</h2></a>
+<h2><img src="https://www.movistarplus.es/recorte/m-DPBLAN/guiamovil/DAZNLI.png" />Dazn liga 720</h2></a>
 <a href="acestream://ed2a15319345fb0739590faf88d8be4cb1663bf3">
 <h2><img src="https://www.movistarplus.es/recorte/m-DPBLAN/guiamovil/DAZNLI.png" />Liga bar 1080</h2></a>
 <a href="acestream://045718bad2ddb4f03b1a420754a97a23ad8b493b">
-<h2><img src="https://sportstves.b-cdn.net/channels/movistar-liga-de-campeones_201809141044.png" />M.L. Campeones 1080 MultiAudio</h2></a>
+<h2><img src="https://www.movistarplus.es/recorte/m-DPBLAN/guiamovil/CHAPIO.png" />M.L. Campeones 1080 MultiAudio</h2></a>
 <a href="acestream://444b51b2606cba9efb1b4ff56bf652cbc02a5f47">
-<h2><img src="https://sportstves.b-cdn.net/channels/movistar-liga-de-campeones_201809141044.png" />M.L. Campeones 720</h2></a>
+<h2><img src="https://www.movistarplus.es/recorte/m-DPBLAN/guiamovil/CHAPIO.png" />M.L. Campeones 720</h2></a>
 <a href="acestream://dfffbcdd9c7e32d5dc88d268dee830ff2a0d3ab6">
-<h2><img src="https://sportstves.b-cdn.net/channels/movistar-liga-de-campeones-2_201809141044.png" />M.L. Campeones 2 1080</h2></a>
+<h2><img src="https://www.movistarplus.es/recorte/m-DPBLAN/guiamovil/CHAP1.png" />M.L. Campeones 2 1080</h2></a>
 <a href="acestream://2d584c7335ff44f97c3cf64947892ef30fde715c">
-<h2><img src="https://sportstves.b-cdn.net/channels/movistar-liga-de-campeones-2_201809141044.png" />M.L. Campeones 2 720</h2></a>
+<h2><img src="https://www.movistarplus.es/recorte/m-DPBLAN/guiamovil/CHAP1.png" />M.L. Campeones 2 720</h2></a>
 <a href="acestream://ecf4ec41200785812c140e3d1050b412f1519fa7">
-<h2><img src="https://www.movistarplus.es/recorte/m-DPBLAN/guiamovil/CHAP3.png" />M.L. Campeones 3 1080</h2></a>
+<h2><img src="https://www.movistarplus.es/recorte/m-DPBLAN/guiamovil/CHAP2.png" />M.L. Campeones 3 1080</h2></a>
 <a href="acestream://d59fe9978eed49f256b312a60671b5bce43d3f24">
-<h2><img src="https://www.movistarplus.es/recorte/m-DPBLAN/guiamovil/CHAP3.png" />M.L. Campeones 3 720</h2></a>
+<h2><img src="https://www.movistarplus.es/recorte/m-DPBLAN/guiamovil/CHAP2.png" />M.L. Campeones 3 720</h2></a>
 <a href="acestream://1a1b528109edead1904e3dbff575637a452dd1fa">
 <h2><img src="https://www.movistarplus.es/recorte/m-DPBLAN/guiamovil/CHAP3.png" />M.L. Campeones 4 SD</h2></a>
 <a href="acestream://4b4a77f005ea45e57276ff9d90c3830b3c59010d">
@@ -67,9 +98,9 @@ h2 {font-family:Oswald,sans-serif;font-weight:400;color:#000;background-color:#e
 <a href="acestream://704c3c92aafbcf3234c88a4be5fd98fcbd238d85">
 <h2><img src="https://www.movistarplus.es/recorte/m-DPBLAN/guiamovil/M2SD.png" />DAZN 2 720</h2></a>
 <a href="acestream://bbbbc306280b2161e6c3cfa83cc9aef18f046c4a">
-<h2><img src="https://www.movistarplus.es/recorte/m-NEO/ficha_m/DAZN3.png" />DAZN 3 1080</h2></a>
+<h2><img src="https://www.movistarplus.es/recorte/m-DPBLAN/guiamovil/DAZN3.png" />DAZN 3 1080</h2></a>
 <a href="acestream://149a38e333de920753f1388c43247283bdb05f5b">
-<h2><img src="https://www.movistarplus.es/recorte/m-NEO/ficha_m/DAZN4.png" />DAZN 4 1080</h2></a>
+<h2><img src="https://www.movistarplus.es/recorte/m-DPBLAN/guiamovil/DAZN4.png" />DAZN 4 1080</h2></a>
 <a href="acestream://60cf60019aeef9af6183dd05af1b89e25594ac14">
 <h2><img src="https://www.movistarplus.es/recorte/m-DPBLAN/guiamovil/MVF1.png" />DAZN F1 1080</h2></a>
 <a href="acestream://4fc3417ae1f5cfd8c7ab8e4ebdb9ba88d486caf2">
@@ -95,13 +126,13 @@ h2 {font-family:Oswald,sans-serif;font-weight:400;color:#000;background-color:#e
 <a href="acestream://f41bd6f3eed3fa2f561e39a9865df8ab354bf486">
 <h2><img src="https://www.movistarplus.es/recorte/m-DPBLAN/guiamovil/MULTI8.png" />M. Deportes 6 1080</h2></a>
 <a href="acestream://f559b9fea692a86e1a1de41cd1aa667e3fa02775">
-<h2><img src="https://sportstves.b-cdn.net/channels/vamos_201809141048.png" />Vamos 1080</h2></a>
+<h2><img src="https://www.movistarplus.es/recorte/m-DPBLAN/guiamovil/VAMOSD.png" />Vamos 1080</h2></a>
 <a href="acestream://0e18315b703248bb01eab6b9d3f0cb2cd893601f">
-<h2><img src="https://sportstves.b-cdn.net/channels/vamos_201809141048.png" />Vamos 720</h2></a>
+<h2><img src="https://www.movistarplus.es/recorte/m-DPBLAN/guiamovil/VAMOSD.png" />Vamos 720</h2></a>
 <a href="acestream://71e9e4c66a271ff58beb76792e01eeb6a1dde746">
-<h2><img src="https://www.movistarplus.es/recorte/m-NEO/ficha_m/MELLAV.png" />Ellas</h2></a>
+<h2><img src="https://www.movistarplus.es/recorte/m-DPBLAN/guiamovil/MELLAV.png" />Ellas</h2></a>
 <a href="acestream://d4627f7b6b237a8556819445b3283d866caceca2">
-<h2><img src="https://sportstves.b-cdn.net/channels/golt.png" />GOL TV 1080</h2></a>
+<h2><img src="https://www.movistarplus.es/recorte/m-DPBLAN/guiamovil/GOL.png" />GOL TV 1080</h2></a>
 <a href="acestream://4f945b0ba4206fa2676b61e9eaa465ac3dcc8122">
 <h2><img src="https://www.movistarplus.es/recorte/m-DPBLAN/guiamovil/GOLF2.png" />Golf</h2></a>
 <a href="acestream://c9ee7c95e7a2e9cd0e848b1f70848453652bebc2">
@@ -109,17 +140,17 @@ h2 {font-family:Oswald,sans-serif;font-weight:400;color:#000;background-color:#e
 <a href="acestream://d6622ca93e54e493a6910248f8fe1f03aa85bf01">
 <h2><img src="https://www.movistarplus.es/recorte/m-DPBLAN/guiamovil/ESP2.png" />EuroSport 2 1080</h2></a>
 <a href="acestream://16089ab3f31a2756cf2ba6d507ff367cce14df83">
-<h2><img src="https://static.wikia.nocookie.net/logopedia/images/4/4f/Tennis_Channel_2022.svg/revision/latest/scale-to-width-down/32?cb=20221201171651" />Tenis</h2></a>
+<h2><img src="https://www.movistarplus.es/recorte/m-DPBLAN/guiamovil/CHILE.png" />Tenis</h2></a>
 <a href="acestream://5a272a468eaf25feb032e2c5d377c6276b2299c7">
-<h2><img src="https://sportstves.b-cdn.net/channels/teledeporte.png" />tdp 1080 (TeleDeporte)</h2></a>
+<h2><img src="https://www.movistarplus.es/recorte/m-DPBLAN/guiamovil/TDEP.png" />tdp 1080 (TeleDeporte)</h2></a>
 <a href="acestream://fd0a3f8874ba9bb0516b1e2b978827fdd6661842">
-<h2><img src="https://sportstves.b-cdn.net/channels/la1.png" />La 1 1080</h2></a>
+<h2><img src="https://www.movistarplus.es/recorte/m-DPBLAN/guiamovil/TVE.png" />La 1 1080</h2></a>
 <a href="acestream://6636a5c1055b5913ddcd0e87a5523f7d935350af">
-<h2><img src="https://sportstves.b-cdn.net/channels/la1.png" />La 1 UHD</h2></a>
+<h2><img src="https://www.movistarplus.es/recorte/m-DPBLAN/guiamovil/TVE.png" />La 1 UHD</h2></a>
 <a href="acestream://7791ba828c0226d8f54cef1611889d29fb333247">
-<h2><img src="https://sportstves.b-cdn.net/channels/laliga-smartbank-tv_202208100743.png" />Smartbank 1080 MultiAudio</h2></a>
+<h2><img src="https://www.movistarplus.es/recorte/m-DPBLAN/guiamovil/MLIGS.png" />Smartbank 1080 MultiAudio</h2></a>
 <a href="acestream://ae84b2cc45ebf1148cc36ee5f801f26a04a2ac2c">
-<h2><img src="https://sportstves.b-cdn.net/channels/laliga-smartbank-tv_202208100743.png" />Smartbank 720</h2></a>
+<h2><img src="https://www.movistarplus.es/recorte/m-DPBLAN/guiamovil/MLIGS.png" />Smartbank 720</h2></a>
 <a href="acestream://cf6249379184d88a61f9db617341c6b6e6abb342">
 <h2><img src="https://www.movistarplus.es/recorte/m-DPBLAN/guiamovil/MLIGS2.png" />Smartbank 2 1080</h2></a>
 <a href="acestream://d9cf1776ec4443e88aab3ca4b57647b00b4e439e">
@@ -128,17 +159,15 @@ h2 {font-family:Oswald,sans-serif;font-weight:400;color:#000;background-color:#e
 <h2><img src="https://www.movistarplus.es/recorte/m-DPBLAN/guiamovil/MLIGS3.png" />Smartbank 3 1080</h2></a>
 <a href="acestream://d0c5c350d8c62f7b7aa2516646a7e6f42b6155d1">
 <h2><img src="https://www.movistarplus.es/recorte/m-DPBLAN/guiamovil/NATGEO.png" />National Geografic</h2></a>
-</main>
-</div></div>
 <script>
 function handleLinkClick(url) {
 // Comunica el enlace al WebViewer de App Inventor
 window.AppInventor.setWebViewString(url);
 }// Agrega un manejador de eventos a todos los enlaces
 var links = document.getElementsByTagName('a');
-for (var i = 0; i < links.length; i++) {
+for (var i = 2; i < links.length; i++) {
 links[i].addEventListener('click', function(e) {
-//e.preventDefault(); // Evita la navegación por defecto
+e.preventDefault(); // Evita la navegación por defecto
 handleLinkClick(this.href);
 });
 }
