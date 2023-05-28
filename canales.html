@@ -13,45 +13,17 @@ a:link, a:visited, a:active {text-decoration:none}
 h1 {margin:0;font-family:Oswald,sans-serif;font-weight:400;font-size:1.3em;padding:7px 15px 10px;color:#FFF;background:0 #595959;position:sticky;top:0px;z-index:1;margin-top:0;}
 h2 {font-family:Oswald,Arial;font-weight:400;color:#000;background-color:#ededed;font-size:1.4em;padding:0px 5px;margin-bottom:3px;margin-top:3px;display:flex;align-items:center;}
 body {background-color: #f5f5f5;margin:0;}
-.menu {
-  display: flex;
-}
-
-.menu-link {
-  flex: 1;
-  font-family:Oswald,Arial;font-weight:500;font-size:1.4em;
-  text-align: center;
-  position: relative;
-  background-color: #888;
-  color: #EEE;
-  padding: 10px;
-  text-decoration: none;  
-}
-.menu-link:first-child {
-  background-color: #888;
-  color: #FFF;
-}
-.menu-link.active:before {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 2px;
-  background-color: #FFF;
-}
-
+.menu {display: flex;}
+.menu-link {flex:1;font-family:Oswald,Arial;font-weight:500;font-size:1.4em;text-align:center;position:relative;background-color:#888;color:#EEE;padding:10px;text-decoration:none;}
+.menu-link:first-child {background-color:#888;color:#FFF;}
+.menu-link.active:before {content: "";position: absolute;bottom: 0;left: 0;width: 100%;height: 2px;background-color: #FFF;}
 </style>
 </head>
 </body>
 <title>Antonios</title>
-
 <div class="menu">
-  <a href="index.html" class="menu-link active">Canales</a>
-  <a href="calendario.html" class="menu-link">Programación</a>
-</div>
-
-
+<a href="index.html" class="menu-link active">Canales</a>
+<a href="calendario.html" class="menu-link">Programación</a></div>
 <h1>Seleccione el canal que desea ver:</h1>
 <a href="acestream://1e0214a06000e6f4847dd30cdc2fb839527be862">
 <h2><img src="https://www.movistarplus.es/recorte/m-DPBLAN/guiamovil/MLIGA.png" />M.Liga 1080 Multiaudio</h2></a>
@@ -142,7 +114,7 @@ body {background-color: #f5f5f5;margin:0;}
 <a href="acestream://16089ab3f31a2756cf2ba6d507ff367cce14df83">
 <h2><img src="https://www.movistarplus.es/recorte/m-DPBLAN/guiamovil/CHILE.png" />Tenis</h2></a>
 <a href="acestream://5a272a468eaf25feb032e2c5d377c6276b2299c7">
-<h2><img src="https://www.movistarplus.es/recorte/m-DPBLAN/guiamovil/TDEP.png" />tdp 1080 (TeleDeporte)</h2></a>
+<h2><img src="https://www.movistarplus.es/recorte/m-DPBLAN/guiamovil/TDEP.png" />Teledeporte</h2></a>
 <a href="acestream://fd0a3f8874ba9bb0516b1e2b978827fdd6661842">
 <h2><img src="https://www.movistarplus.es/recorte/m-DPBLAN/guiamovil/TVE.png" />La 1 1080</h2></a>
 <a href="acestream://6636a5c1055b5913ddcd0e87a5523f7d935350af">
