@@ -71,7 +71,7 @@ e.preventDefault(); // Evita la navegación por defecto
 handleLinkClick(this.href);
 });
 }
-var fechaHoy = new Date();
+/*var fechaHoy = new Date();
 fechaHoy.setHours(0, 0, 0, 0);
 var contenedores = document.querySelectorAll("[id^="container"]");
 for (var i = 0; i < contenedores.length; i++) { 
@@ -82,4 +82,5 @@ if (fechaContenedor.getTime() < fechaHoy.getTime()) { contenedor.style.display =
 function parseFecha(fechaTexto) {
 var partes = fechaTexto.split(" ");var dia = parseInt(partes[1]);var mesTexto = partes[3];var mesNumero = obtenerMesNumero(mesTexto);var anio = parseInt(partes[5]);return new Date(anio, mesNumero, dia);}
 function obtenerMesNumero(mesTexto) {var meses = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"];return meses.findIndex(function(mes) {return mes === mesTexto.toLowerCase();});}
+*/
 </script></body></html>
