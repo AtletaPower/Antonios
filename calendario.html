@@ -392,11 +392,26 @@ body {background-color: #f5f5f5;margin:0;}
 <div class="event-info">Udinese-Juventus</div>	
 <div class="canal">Movistar L. Camp. 3</div></div></div></a>	
 </div><script>
-function handleLinkClick(url) {window.AppInventor.setWebViewString(url);}
-var links = document.getElementsByTagName('a');
+ // Agrega un manejador de eventos a todos los enlaces
+
+function handleLinkClick(url) {
+  // Comunica el enlace al WebViewer de App Inventor
+  window.AppInventor.setWebViewString(url);
+}
+  var links = document.getElementsByTagName('a');
 for (var i = 0; i < links.length; i++) {
-if (i < 2) {links[i].addEventListener('click', function(e) {handleLinkClick(this.href);});
-} else {links[i].addEventListener('click', function(e) {e.preventDefault();handleLinkClick(this.href);});}}
+  var container = links[i].closest('.row').parentNode;
+  if (container.id.startsWith('container')) {
+    // Deshabilitar la navegación en los enlaces dentro de los contenedores
+    links[i].addEventListener('click', function(e) {
+      e.preventDefault(); // Evita la navegación por defecto
+      handleLinkClick(this.href);
+    });
+  }
+}
+
+  
+
 var fechaHoy = new Date();fechaHoy.setHours(0, 0, 0, 0);
 var contenedores = document.querySelectorAll('[id^="container"]');
 for (var i = 0; i < contenedores.length; i++) {
