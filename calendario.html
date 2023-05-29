@@ -392,37 +392,10 @@ body {background-color: #f5f5f5;margin:0;}
 <div class="event-info">Udinese-Juventus</div>	
 <div class="canal">Movistar L. Camp. 3</div></div></div></a>	
 </div><script>
- // Agrega un manejador de eventos a todos los enlaces
-
-function handleLinkClick(url) {
-  // Comunica el enlace al WebViewer de App Inventor
-  window.AppInventor.setWebViewString(url);
-}
-  var links = document.getElementsByTagName('a');
+function handleLinkClick(url) {window.AppInventor.setWebViewString(url);}
+var links = document.getElementsByTagName('a');
 for (var i = 0; i < links.length; i++) {
-  var container = links[i].closest('.row').parentNode;
-  if (container.id.startsWith('container')) {
-    // Deshabilitar la navegación en los enlaces dentro de los contenedores
-    links[i].addEventListener('click', function(e) {
-      e.preventDefault(); // Evita la navegación por defecto
-      handleLinkClick(this.href);
-    });
-  }
-}
+if (i < 2) {links[i].addEventListener('click', function(e) {handleLinkClick(this.href);});
+} else {links[i].addEventListener('click', function(e) {e.preventDefault();handleLinkClick(this.href);});}}
 
-  
-
-var fechaHoy = new Date();fechaHoy.setHours(0, 0, 0, 0);
-var contenedores = document.querySelectorAll('[id^="container"]');
-for (var i = 0; i < contenedores.length; i++) {
-var contenedor = contenedores[i];
-var fechaContenedorTexto = contenedor.querySelector(".row-header").textContent;
-var fechaContenedor = parseFecha(fechaContenedorTexto);
-if (fechaContenedor.getTime() < fechaHoy.getTime()) {contenedor.style.display = "none";}}
-function parseFecha(fechaTexto) {var partes = fechaTexto.split(" ");var dia = parseInt(partes[1]);var mesTexto = partes[3];
-var mesNumero = obtenerMesNumero(mesTexto);var año = parseInt(partes[5]);
-return new Date(año, mesNumero, dia);}
-function obtenerMesNumero(mesTexto) {
-var meses = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"];
-return meses.findIndex(function(mes) {return mes === mesTexto.toLowerCase();});}
 </script></body></html>
