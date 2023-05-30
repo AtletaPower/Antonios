@@ -395,7 +395,7 @@ body {background-color: #f5f5f5;margin:0;}
 function handleLinkClick(url) {window.AppInventor.setWebViewString(url);}
 var links = document.getElementsByTagName('a');
 for (var i = 0; i < links.length; i++) {
-if (i < 2) {links[i].addEventListener('click', function(e) {handleLinkClick(this.href);});
-} else {links[i].addEventListener('click', function(e) {e.preventDefault();handleLinkClick(this.href);});}}
+if (i > 2) {
+links[i].addEventListener('click', function(e) {e.preventDefault();handleLinkClick(this.href);});}}
 
 </script></body></html>
