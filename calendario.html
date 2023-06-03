@@ -288,8 +288,10 @@ body {background-color: #f5f5f5;margin:0;}
 </div><script>
 function handleLinkClick(url) {window.AppInventor.setWebViewString(url);}
 var links = document.getElementsByTagName('a');
+  if (navigator.userAgent.includes('Android')) {
 for (var i = 0; i < links.length; i++) {
 if (i > 1) {links[i].addEventListener('click', function(e) {e.preventDefault();handleLinkClick(this.href);});}}
+  }
 var fechaHoy = new Date();fechaHoy.setHours(0, 0, 0, 0);
 var contenedores = document.querySelectorAll('[id^="container"]');
 for (var i = 0; i < contenedores.length; i++) {
