@@ -137,10 +137,12 @@ function handleLinkClick(url) {
 window.AppInventor.setWebViewString(url);
 }// Agrega un manejador de eventos a todos los enlaces
 var links = document.getElementsByTagName('a');
+  if (navigator.userAgent.includes('Android')) {
 for (var i = 2; i < links.length; i++) {
 links[i].addEventListener('click', function(e) {
 e.preventDefault(); // Evita la navegación por defecto
 handleLinkClick(this.href);
 });
 }
+  }
 </script></body></html>
