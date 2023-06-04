@@ -225,7 +225,8 @@ var links = document.getElementsByTagName('a');
 if (navigator.userAgent.includes('Android')) {
 for (var i = 2; i < links.length; i++) {
 if (links[i].getAttribute('href') !== '') {
-links[i].addEventListener('click', function(e) {e.preventDefault(); handleLinkClick(this.href); });}}}
+links[i].addEventListener('click', function(e) {e.preventDefault(); handleLinkClick(this.href); });
+} else { links[i].addEventListener('click', function(e) { e.preventDefault(); });}}}
 var fechaHoy = new Date();fechaHoy.setHours(0, 0, 0, 0);
 var contenedores = document.querySelectorAll('[id^="container"]');
 for (var i = 0; i < contenedores.length; i++) {
