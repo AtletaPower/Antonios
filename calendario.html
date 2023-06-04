@@ -224,8 +224,8 @@ function handleLinkClick(url) {window.AppInventor.setWebViewString(url);}
 var links = document.getElementsByTagName('a');
 if (navigator.userAgent.includes('Android')) {
 for (var i = 2; i < links.length; i++) {
-links[i].addEventListener('click', function(e) { e.preventDefault();
-if (this.href !== '') { handleLinkClick(this.href); }});}}
+if (links[i].getAttribute('href') !== '') {
+links[i].addEventListener('click', function(e) {e.preventDefault(); handleLinkClick(this.href); });}}}
 var fechaHoy = new Date();fechaHoy.setHours(0, 0, 0, 0);
 var contenedores = document.querySelectorAll('[id^="container"]');
 for (var i = 0; i < contenedores.length; i++) {
