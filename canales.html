@@ -19,7 +19,7 @@ body {background-color: #f5f5f5;margin:0;}
 .menu-link.active:before {content: "";position: absolute;bottom: 0;left: 0;width: 100%;height: 2px;background-color: #FFF;}
 </style>
 </head>
-</body>
+<body>
 <title>Antonios</title>
 <div class="menu">
 <a href="index.html" class="menu-link active">Canales</a>
@@ -73,6 +73,8 @@ body {background-color: #f5f5f5;margin:0;}
 <h2><img src="https://www.movistarplus.es/recorte/m-DPBLAN/guiamovil/DAZN3.png" />DAZN 3 1080</h2></a>
 <a href="acestream://149a38e333de920753f1388c43247283bdb05f5b">
 <h2><img src="https://www.movistarplus.es/recorte/m-DPBLAN/guiamovil/DAZN4.png" />DAZN 4 1080</h2></a>
+<a href="acestream://3ecec6a5ad9fbc53f3c47b9d89c479ef9e2ac33e">
+<h2><img src="https://www.movistarplus.es/recorte/m-DPBLAN/guiamovil/MVF1.png" />DAZN F1 1080</h2></a>
 <a href="acestream://60cf60019aeef9af6183dd05af1b89e25594ac14">
 <h2><img src="https://www.movistarplus.es/recorte/m-DPBLAN/guiamovil/MVF1.png" />DAZN F1 1080</h2></a>
 <a href="acestream://4fc3417ae1f5cfd8c7ab8e4ebdb9ba88d486caf2">
@@ -137,10 +139,11 @@ function handleLinkClick(url) {
 window.AppInventor.setWebViewString(url);
 }// Agrega un manejador de eventos a todos los enlaces
 var links = document.getElementsByTagName('a');
+if (navigator.userAgent.includes('Android')) {
 for (var i = 2; i < links.length; i++) {
 links[i].addEventListener('click', function(e) {
 e.preventDefault(); // Evita la navegación por defecto
 handleLinkClick(this.href);
 });
-}
+}}
 </script></body></html>
