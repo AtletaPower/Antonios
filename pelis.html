@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+<meta name="robots" content="noindex">
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#222222">
@@ -20,9 +21,10 @@ body {background-color: #f5f5f5;margin:0;}
 .row {display: flex;align-items: center;margin-bottom: 3px;margin-top:3px;background:#ededed;}
 .left-area {flex-shrink: 0;width: 100px;margin-left: 10px; margin-right: 10px;}
 .text {font-family:Oswald,Arial;color:#000;text-align:left;font-weight: 300;font-size: 1.3em;}
-.right-area {flex-grow: 1;text-align: left;margin-right: 10px;}
+.right-area {flex-grow: 1;text-align: left; margin-right: 10px;}
 .image-container {max-width: 100%;}
 .image-container img {width: 100%;height: auto;}
+.highlight {background-color: yellow;}
 </style>
 </head>
 <body>
@@ -31,7 +33,14 @@ body {background-color: #f5f5f5;margin:0;}
 <a href="index.html" class="menu-link">Canales</a>
 <a href="calendario.html" class="menu-link">Programación</a>
 <a href="pelis.html" class="menu-link active">Películas</a></div>
-<h1>Seleccione la película que desea ver:</h1>
+<h1>Seleccione la película que desea ver:
+	<form id="search-form">
+           <input type="text" id="busqueda" placeholder="Escribe tu búsqueda..." autocomplete="off">
+           <button type="button" id="anterior" onclick="buscarAnterior()">Anterior</button>
+           <button type="button" id="siguiente" onclick="buscarSiguiente()">Siguiente</button>
+    </form>
+</h1>
+<div id="contenido">
 <a href="acestream://ee1dc2f65ef057d59e9b791eddcf97aefee0d12f">
 <div class="row"><div class="left-area"><div class="image-container">
 <img src="https://cdn.sincroguia.tv/uploads/programs/e/l/-/el-amante-olvidado-poster-1227466_SPA-67_V.jpg"></div></div>
@@ -1884,6 +1893,7 @@ body {background-color: #f5f5f5;margin:0;}
 <div class="row"><div class="left-area"><div class="image-container">
 <img src="https://m.media-amazon.com/images/M/MV5BNDVhYTMzNmUtNTkzZS00MTczLTg3MjYtMmM1OTg1MWVlOWU4XkEyXkFqcGdeQXVyMzc3MjYwNzU@._V1_FMjpg_UX1000_.jpg"></div></div>
 <div class="right-area"><div class="text">Combustion instantanea (2022)5.3</div></div></div></a>
+</div>
 <script>
 function handleLinkClick(url) {
 // Comunica el enlace al WebViewer de la App
@@ -1897,4 +1907,57 @@ e.preventDefault(); // Evita la navegación por defecto
 handleLinkClick(this.href);
 });
 }}
+
+        let coincidencias = [];
+        let coincidenciaActual = -1;
+
+        function buscarAnterior() {
+            if (coincidencias.length > 0) {
+                coincidenciaActual = (coincidenciaActual - 1 + coincidencias.length) % coincidencias.length;
+                centrarResultado(coincidencias[coincidenciaActual]);
+            }
+        }
+
+        function buscarSiguiente() {
+            if (coincidencias.length > 0) {
+                coincidenciaActual = (coincidenciaActual + 1) % coincidencias.length;
+                centrarResultado(coincidencias[coincidenciaActual]);
+            }
+        }
+
+        function centrarResultado(elemento) {
+            elemento.scrollIntoView({ behavior: "smooth", block: "center" });
+        }
+
+        const busquedaInput = document.getElementById("busqueda");
+        const searchForm = document.getElementById("search-form");
+
+        searchForm.addEventListener("submit", function(event) {
+            event.preventDefault(); // Evitar que se recargue la página al enviar el formulario
+        });
+
+        busquedaInput.addEventListener("input", function() {
+            const searchTerm = this.value.toLowerCase();
+            const contentDiv = document.getElementById("contenido");
+            const textDivs = contentDiv.querySelectorAll(".text");
+
+            coincidencias = [];
+            coincidenciaActual = -1;
+
+            textDivs.forEach(textDiv => {
+                const text = textDiv.textContent.toLowerCase();
+                if (text.includes(searchTerm)) {
+                    textDiv.innerHTML = text.replace(new RegExp(searchTerm, 'gi'), match => {
+                        coincidencias.push(textDiv);
+                        return `<span class="highlight">${match}</span>`;
+                    });
+                } else {
+                    textDiv.innerHTML = text;
+                }
+            });
+
+            if (coincidencias.length > 0) {
+                centrarResultado(coincidencias[0]);
+            }
+        });
 </script></body></html>
