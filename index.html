@@ -195,10 +195,6 @@ body {background-color: #f5f5f5;margin:0;}
 <h2><img src="https://assets.hackmd.io/build/emojify.js/dist/images/basic/flag-us.png" />FOX Sports 2 HD [US] </h2></a>
 <a href="acestream://92a7dcc55392efc6dd5d012c4ff3878891eb6a6e">
 <h2><img src="https://assets.hackmd.io/build/emojify.js/dist/images/basic/flag-us.png" />beIN Sports Xtra Ñ </h2></a>
-  
-<a href="https://www.realmadrid.com/real-madrid-tv" target="_blank">
-<h2><img src="https://assets.hackmd.io/build/emojify.js/dist/images/basic/flag-us.png" />MadridTv </h2></a>
-  
 <script>
 function handleLinkClick(url) {
 // Comunica el enlace al WebViewer de App Inventor
@@ -207,10 +203,9 @@ window.AppInventor.setWebViewString(url);
 var links = document.getElementsByTagName('a');
 if (navigator.userAgent.includes('Android')) {
 for (var i = 3; i < links.length; i++) {
-  if (link.href.toLowerCase().startsWith('acestream')) {
 links[i].addEventListener('click', function(e) {
 e.preventDefault(); // Evita la navegación por defecto
 handleLinkClick(this.href);
 });
-}}}
+}}
 </script></body></html>
