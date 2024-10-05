@@ -25,8 +25,7 @@ body {background-color: #f5f5f5;margin:0;}
 .image-container {max-width: 100%;}
 .image-container img {width: 100%;height: auto;}
 .highlight {background-color: yellow;}
-/* Aplica el borde solo en dispositivos con puntero de baja precisión */
-@media (any-pointer: coarse) {
+@media (any-hover: none) and (any-pointer: coarse) {
     .menu-link:focus {
         outline: none;
         border: 2px solid orange;
