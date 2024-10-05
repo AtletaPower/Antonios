@@ -27,9 +27,12 @@ body {background-color: #f5f5f5;margin:0;}
 .event-name {font-family: Oswald,Arial;font-weight: 300;color:#555;font-size: 1em;margin-bottom: 3px;}
 .event-info {font-family: Oswald,Arial;color:#000;font-weight: bold;font-size: 1.2em;margin-bottom: 7px;}
 .canal {margin:0 2px 5px;display:inline-block;padding:2px 5px;font-size:.8em;-moz-border-radius:3px;-webkit-border-radius:3px;border-radius:3px;white-space:pre;background-color:#ff8902;color:#fff;}
-.menu-link:focus {
-    outline: none; /* Elimina el borde por defecto */
-    border: 2px solid orange; /* Añade un borde naranja claro alrededor del enlace */
+/* Aplica el borde solo en dispositivos que no son táctiles */
+@media (hover: none) and (pointer: coarse) {
+    .menu-link:focus {
+        outline: none; /* Elimina el borde por defecto */
+        border: 2px solid orange; /* Añade un borde naranja claro alrededor del enlace */
+    }
 }
 </style>
 </head>
