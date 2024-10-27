@@ -36,10 +36,7 @@ body {background-color: #f5f5f5;margin:0;}
 <a href="calendario.html" class="menu-link active">Programación</a>
 <a href="pelis.html" class="menu-link">Películas</a></div>
 </div><div id="container0">
-  <div class="row-header" style="display: flex; justify-content: space-between; align-items: center;">
-    <span>domingo 27 de octubre de 2024</span>
-    <span id="clock">00:00</span>
-  </div>
+<div class="row-header">domingo 27 de octubre de 2024</div>
 <a href="acestream://d00223931b1854163e24c5c22475015d7d45c112">
 <div class="row"><div class="left-area">
 <div class="text">NBA</div>	
@@ -248,14 +245,14 @@ body {background-color: #f5f5f5;margin:0;}
 <div class="event-name">LIGA ENDESA</div>	
 <div class="event-info">Unicaja - Barça</div>	
 <div class="canal">Vamos</div></div></div></a>	
-<a href="acestream://5a236fbbe6e5bbfec03db548c244a7c858d675c0">
+<a href="acestream://7d8c87e057be98f00f22e23b23fbf08999e4b02f">
 <div class="row"><div class="left-area">
 <div class="text">Fútbol</div>	
 <div class="hora">18:30</div></div>	
 <div class="right-area">
 <div class="event-name">LALIGA EA SPORTS</div>	
 <div class="event-info">Betis - At. Madrid</div>	
-<div class="canal">Movistar Plus+</div></div></div></a>	
+<div class="canal">M+ LALIGA TV</div></div></div></a>	
 <a href="acestream://d81b4f2f3fde433539c097b2edc9b587ca47b087">
 <div class="row"><div class="left-area">
 <div class="text">Fútbol</div>	
@@ -337,14 +334,6 @@ body {background-color: #f5f5f5;margin:0;}
 <div class="event-info">Washington Commanders - Chicago Bears</div>	
 <div class="canal">Movistar Deportes</div></div></div></a>	
 </div><script>
-    function updateClock() {
-    const now = new Date();
-    const hours = String(now.getHours()).padStart(2, '0');
-    const minutes = String(now.getMinutes()).padStart(2, '0');
-    document.getElementById('clock').innerText = `${hours}:${minutes}`;
-  }
-  setInterval(updateClock, 1000);
-  updateClock();
 function handleLinkClick(url) {window.AppInventor.setWebViewString(url);}
 var links = document.getElementsByTagName('a');
 if (navigator.userAgent.includes('Android')) {
