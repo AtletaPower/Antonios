@@ -18,7 +18,12 @@ body {background-color: #f5f5f5;margin:0;}
 .menu-link {flex:1;font-family:Oswald,Arial;font-weight:500;font-size:1.4em;text-align:center;position:relative;background-color:#366E8D;color:#EEE;padding:7px;text-decoration:none;}
 .menu-link:first-child {background-color:#366E8D;color:#FFF;}
 .menu-link.active:before {content: "";position: absolute;bottom: 0;left: 0;width: 100%;height: 2px;background-color: #FFF;}
-.lista-canales {display: none;}
+.lista-canales {
+    display: none;
+}
+.lista-canales h2 {
+    padding-left: 50px; /* Tabula todo el contenido: icono, imagen y texto */
+}
 .activo {display: block;}
 </style>
 </head>
@@ -394,7 +399,6 @@ body {background-color: #f5f5f5;margin:0;}
 	<h2><img src="https://www.movistarplus.es/recorte/m-DPBLAN/guiamovil/MLIGS6.png" />LaLiga Hypermotion 11</h2></a>
 	<a href="acestream://7b975804279b0aa421496538ad21397cc06ddfb8">
 	<h2><img src="https://www.movistarplus.es/recorte/m-DPBLAN/guiamovil/MLIGS6.png" />LaLiga Hypermotion 12</h2></a>
-    <a href="acestream://id8"><h2>Liga Hypermotion</h2></a>
 </div>
 
 <!-- Categoría: Televisión -->
@@ -417,7 +421,7 @@ body {background-color: #f5f5f5;margin:0;}
 </div>
 
 <!-- Categoría: Otros -->
-<h2 onclick="toggleLista(this)">📺 Otros</h2>
+<h2 onclick="toggleLista(this)">🏆 Otros</h2>
 <div class="lista-canales">
 	<a href="acestream://897e73c9d578848f596585314ecb9ae067c0e229">
 	<h2><img src="https://www.movistarplus.es/recorte/m-DPBLAN/guiamovil/M1SD.png" />NFL</h2></a>
