@@ -314,4 +314,50 @@ return new Date(año, mesNumero, dia);}
 function obtenerMesNumero(mesTexto) {
 var meses = ["enero", "febrero", "marzo", "abril", "mayo", "junio", "julio", "agosto", "septiembre", "octubre", "noviembre", "diciembre"];
 return meses.findIndex(function(mes) {return mes === mesTexto.toLowerCase();});}
+
+
+window.onload = function() {
+    let ahora = new Date();
+    
+    // Hora actual en minutos
+    let hh = ahora.getHours();
+    let mm = ahora.getMinutes();
+    let minutosAhora = hh * 60 + mm;
+
+    let filas = document.querySelectorAll(".row"); 
+    let elegido = null;
+    let diffMin = Infinity;
+
+    filas.forEach(fila => {
+        let horaDiv = fila.querySelector(".hora");
+        if (horaDiv) {
+            let [h, m] = horaDiv.textContent.trim().split(":").map(Number);
+            let minutosFila = h * 60 + m;
+
+            let diff = Math.abs(minutosFila - minutosAhora);
+            if (diff < diffMin) {
+                diffMin = diff;
+                elegido = fila;
+            }
+        }
+    });
+
+    if (elegido) {
+        // Siempre hacemos scroll, en cualquier dispositivo
+        elegido.scrollIntoView({behavior: "smooth", block: "center"});
+
+        // Detectar si es Android TV / TVBox (user agent suele contener "TV" o "AFT" de Amazon Fire TV)
+        let ua = navigator.userAgent.toLowerCase();
+        if (ua.includes("tv") || ua.includes("aft") || ua.includes("bravia")) {
+            elegido.setAttribute("tabindex", "0");
+            elegido.focus();
+        }
+    }
+};
+
+
+
+</script>
+
+
 </script></body></html>
